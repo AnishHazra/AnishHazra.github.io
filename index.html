@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anish Hazra - Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#78B5E3",
+            secondary: "#4f46e5",
+          },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "8px",
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/images/img.png">
+  <script src="projects-data.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-xl font-bold text-gray-900">
+          ANISH <span class="text-primary">CODES</span>
+        </div>
+        <div class="hidden md:flex space-x-12">
+          <a href="#about"
+            class="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium">ABOUT</a>
+          <a href="#projects"
+            class="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium">PORTFOLIO</a>
+          <a href="#opensource"
+            class="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium">OPEN SOURCE</a>
+          <a href="#contact"
+            class="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium">CONTACT</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900">
+            <i class="ri-linkedin-line text-lg"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900">
+            <i class="ri-github-line text-lg"></i>
+          </a>
+        </div>
+        <button class="md:hidden w-8 h-8 flex items-center justify-center" id="mobile-menu-button">
+          <i class="ri-menu-line text-xl text-gray-900"></i>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white border-l border-gray-100 md:hidden"
+      id="mobile-menu">
+      <div class="flex flex-col p-6 space-y-6">
+        <button class="self-end w-8 h-8 flex items-center justify-center" id="close-menu">
+          <i class="ri-close-line text-xl text-gray-900"></i>
+        </button>
+        <a href="#about"
+          class="text-gray-600 hover:text-gray-900 transition-colors duration-300 mobile-menu-link">ABOUT</a>
+        <a href="#projects"
+          class="text-gray-600 hover:text-gray-900 transition-colors duration-300 mobile-menu-link">PORTFOLIO</a>
+        <a href="#opensource"
+          class="text-gray-600 hover:text-gray-900 transition-colors duration-300 mobile-menu-link">OPEN SOURCE</a>
+        <a href="#contact"
+          class="text-gray-600 hover:text-gray-900 transition-colors duration-300 mobile-menu-link">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center gradient-bg overflow-hidden" id="hero">
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center space-y-8">
+        <div class="flex justify-center mb-8" data-aos="fade-down">
+          <div class="relative">
+            <img class="rounded-full h-[8rem]" src="assets/images/img.png" alt="img">
+          </div>
+        </div>
+        <div class="space-y-6" data-aos="fade-up">
+          <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
+            Hi, I'm <span class="text-primary">Anish Hazra</span>
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Innovative Software Engineer crafting impactful, scalable web and
+            mobile experiences.
+          </p>
+          <div class="flex justify-center space-x-4 mt-8">
+            <button class="glow-button px-8 py-3 !rounded-button font-medium whitespace-nowrap">
+              View My Work
+            </button>
+            <button
+              class="border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900 px-8 py-3 !rounded-button font-medium whitespace-nowrap transition-colors">
+              View CV
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section class="py-20 bg-gray-100" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-black mb-6 underline-animation" data-aos="fade-up">
+          About Me
+        </h2>
+        <p class="text-xl text-gray-500 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          I'm a passionate software engineer specializing in building innovative and high-quality mobile and web
+          applications.
+        </p>
+        <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="300">
+          <div class="counter" id="apps-counter">0</div>
+          <p class="text-lg font-semibold text-primary">Apps Developed</p>
+          <p class="text-gray-600">Published on App Store & Play Store</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="py-20 bg-gray" id="projects">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-black mb-6 underline-animation" data-aos="fade-up">
+          Portfolio
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          Explore my portfolio of mobile applications, showcasing both personal projects and client work.
+        </p>
+      </div>
+      <div class="flex justify-center mb-12" data-aos="fade-up" data-aos-delay="300">
+        <div class="bg-gray-800 p-1 !rounded-button flex">
+          <button
+            class="tab-button px-6 py-3 !rounded-button font-semibold transition-all duration-300 active whitespace-nowrap"
+            data-tab="personal">
+            Personal Projects
+          </button>
+          <button
+            class="tab-button px-6 py-3 !rounded-button font-semibold transition-all duration-300 text-gray-400 whitespace-nowrap"
+            data-tab="client">
+            Client Projects
+          </button>
+        </div>
+      </div>
+      <!-- Personal Projects -->
+      <div class="tab-content" id="personal-projects">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+      </div>
+
+      <!-- Client Projects -->
+      <div class="tab-content hidden" id="client-projects">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-20 bg-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-black mb-6 underline-animation" data-aos="fade-up">
+          Find Me Online
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          Let's connect and collaborate on your next mobile project.
+        </p>
+      </div>
+      <div class="flex justify-center space-x-8" data-aos="fade-up" data-aos-delay="300">
+        <a href="https://www.instagram.com/anish_codes/"
+          class="w-16 h-16 flex items-center justify-center bg-[#FD08D7] !rounded-button icon-glow text-white">
+          <i class="ri-instagram-line text-2xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/anish-hazra-667396176/"
+          class="w-16 h-16 flex items-center justify-center bg-[#0A66C2] !rounded-button icon-glow text-white">
+          <i class="ri-linkedin-line text-2xl"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=9711934105"
+          class="w-16 h-16 flex items-center justify-center bg-[#50CC5E] !rounded-button icon-glow text-white">
+          <i class="ri-whatsapp-line text-2xl"></i>
+        </a>
+        <a href="https://github.com/AnishHazra"
+          class="w-16 h-16 flex items-center justify-center bg-[#2C3036] !rounded-button icon-glow text-white">
+          <i class="ri-github-line text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gray-400">© <span id="year"></span> Made with ❤️ by Anish Hazra</p>
+    </div>
+  </footer>
+
+  <div class="scroll-to-top" id="scroll-to-top">
+    <i class="ri-arrow-up-line text-xl"></i>
+  </div>
+  <div class="modal" id="project-modal">
+    <div class="max-w-4xl mx-auto bg-gray-900 !rounded-button p-8 m-4 relative">
+      <button class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white"
+        id="close-modal">
+        <i class="ri-close-line text-xl"></i>
+      </button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+</body>
+
+</html>
