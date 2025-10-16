@@ -56,8 +56,6 @@
             class="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium">ABOUT</a>
           <a href="#projects"
             class="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium">PORTFOLIO</a>
-          <a href="#opensource"
-            class="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium">OPEN SOURCE</a>
           <a href="#contact"
             class="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium">CONTACT</a>
         </div>
@@ -74,20 +72,15 @@
         </button>
       </div>
     </div>
-    <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white border-l border-gray-100 md:hidden"
+    <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-primary border-l border-gray-100 md:hidden"
       id="mobile-menu">
-      <div class="flex flex-col p-6 space-y-6">
+      <div class="flex flex-col p-5 space-y-5 bg-primary">
         <button class="self-end w-8 h-8 flex items-center justify-center" id="close-menu">
-          <i class="ri-close-line text-xl text-gray-900"></i>
+          <i class="ri-close-line text-xl text-white"></i>
         </button>
-        <a href="#about"
-          class="text-gray-600 hover:text-gray-900 transition-colors duration-300 mobile-menu-link">ABOUT</a>
-        <a href="#projects"
-          class="text-gray-600 hover:text-gray-900 transition-colors duration-300 mobile-menu-link">PORTFOLIO</a>
-        <a href="#opensource"
-          class="text-gray-600 hover:text-gray-900 transition-colors duration-300 mobile-menu-link">OPEN SOURCE</a>
-        <a href="#contact"
-          class="text-gray-600 hover:text-gray-900 transition-colors duration-300 mobile-menu-link">CONTACT</a>
+        <a href="#about" class="text-white transition-colors duration-300 mobile-menu-link">ABOUT</a>
+        <a href="#projects" class="text-white transition-colors duration-300 mobile-menu-link">PORTFOLIO</a>
+        <a href="#contact" class="text-white transition-colors duration-300 mobile-menu-link">CONTACT</a>
       </div>
     </div>
   </nav>
@@ -183,32 +176,37 @@
   </section>
 
   <!-- Contact -->
-  <section class="py-20 bg-gray">
+  <section class="py-20 bg-gray" id="contact">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-black mb-6 underline-animation" data-aos="fade-up">
-          Find Me Online
+      <div class="text-center mb-12 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 underline-animation" data-aos="fade-up">
+          Contact Me
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          Let's connect and collaborate on your next mobile project.
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
+          Let's connect and collaborate on your next project.
         </p>
       </div>
-      <div class="flex justify-center space-x-8" data-aos="fade-up" data-aos-delay="300">
+      <div class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 max-w-md sm:max-w-2xl mx-auto"
+        data-aos="fade-up" data-aos-delay="300">
         <a href="https://www.instagram.com/anish_codes/"
-          class="w-16 h-16 flex items-center justify-center bg-[#FD08D7] !rounded-button icon-glow text-white">
-          <i class="ri-instagram-line text-2xl"></i>
+          class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-[#FD08D7] !rounded-button icon-glow text-white transition-transform hover:scale-110">
+          <i class="ri-instagram-line text-xl sm:text-2xl"></i>
+        </a>
+        <a href="mailto:anishhazra108@gmail.com"
+          class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-[#22ABF8] !rounded-button icon-glow text-white transition-transform hover:scale-110">
+          <i class="ri-mail-line text-xl sm:text-2xl"></i>
         </a>
         <a href="https://www.linkedin.com/in/anish-hazra-667396176/"
-          class="w-16 h-16 flex items-center justify-center bg-[#0A66C2] !rounded-button icon-glow text-white">
-          <i class="ri-linkedin-line text-2xl"></i>
+          class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-[#0A66C2] !rounded-button icon-glow text-white transition-transform hover:scale-110">
+          <i class="ri-linkedin-line text-xl sm:text-2xl"></i>
         </a>
         <a href="https://api.whatsapp.com/send?phone=9711934105"
-          class="w-16 h-16 flex items-center justify-center bg-[#50CC5E] !rounded-button icon-glow text-white">
-          <i class="ri-whatsapp-line text-2xl"></i>
+          class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-[#50CC5E] !rounded-button icon-glow text-white transition-transform hover:scale-110">
+          <i class="ri-whatsapp-line text-xl sm:text-2xl"></i>
         </a>
         <a href="https://github.com/AnishHazra"
-          class="w-16 h-16 flex items-center justify-center bg-[#2C3036] !rounded-button icon-glow text-white">
-          <i class="ri-github-line text-2xl"></i>
+          class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-[#2C3036] !rounded-button icon-glow text-white transition-transform hover:scale-110">
+          <i class="ri-github-line text-xl sm:text-2xl"></i>
         </a>
       </div>
     </div>
@@ -221,7 +219,7 @@
     </div>
   </footer>
 
-  <div class="scroll-to-top" id="scroll-to-top">
+  <div class="scroll-to-top bg-primary" id="scroll-to-top">
     <i class="ri-arrow-up-line text-xl"></i>
   </div>
   <div class="modal" id="project-modal">
