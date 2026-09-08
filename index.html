@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/images/img.png" />
     <script src="projects-data.js"></script>
@@ -237,6 +238,85 @@
         <!-- Client Projects -->
         <div class="tab-content hidden" id="client-projects">
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="py-20 bg-white" id="instagram">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2
+            class="font-display text-4xl lg:text-5xl font-black mb-6 underline-animation tracking-tight"
+            data-aos="fade-up"
+          >
+            On Instagram
+          </h2>
+          <p class="text-xl text-gray-500 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            Live, auto-updating snapshot of what I'm posting — straight from Instagram, no static content.
+          </p>
+        </div>
+
+        <div
+          class="bg-white border border-gray-100 shadow-sm !rounded-lg p-6 sm:p-8"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <!-- Profile header -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 pb-8 mb-8 border-b border-gray-100"
+          >
+            <div class="flex items-center gap-5">
+              <img
+                src="assets/images/img.png"
+                alt="@anish_codes profile photo"
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border border-gray-200 flex-shrink-0"
+              />
+              <div>
+                <h3 class="font-display text-xl sm:text-2xl font-bold text-gray-900">@anish_codes</h3>
+                <p class="text-gray-500 mt-1 max-w-md">
+                  Behind-the-scenes builds, tips, and lessons from shipping mobile &amp; web apps.
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://www.instagram.com/anish_codes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-5 py-2.5 !rounded-button font-medium whitespace-nowrap transition-colors inline-flex items-center justify-center gap-1.5 self-start sm:self-auto"
+            >
+              Follow on Instagram
+              <i class="ri-arrow-right-up-line"></i>
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <!-- Instagram doesn't expose these live for free — update manually when they change. -->
+          <div class="flex gap-10 sm:gap-14 mb-8" id="instagram-stats">
+            <div>
+              <p class="font-display text-2xl sm:text-3xl font-bold text-gray-900" data-stat="posts">29</p>
+              <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mt-1">Posts</p>
+            </div>
+            <div>
+              <p class="font-display text-2xl sm:text-3xl font-bold text-gray-900" data-stat="followers">1.1K</p>
+              <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mt-1">Followers</p>
+            </div>
+            <div>
+              <p class="font-display text-2xl sm:text-3xl font-bold text-gray-900" data-stat="following">317</p>
+              <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mt-1">Following</p>
+            </div>
+          </div>
+
+          <!-- Live post grid (LightWidget) -->
+          <div id="instagram-widget">
+            <iframe
+              src="//lightwidget.com/widgets/c5bd40834f5a55b991090bd6106c9379.html"
+              scrolling="no"
+              allowtransparency="true"
+              class="lightwidget-widget"
+              style="width: 100%; border: 0; overflow: hidden"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
