@@ -15,6 +15,14 @@
    background: #fafafa;
  }
 
+ #about,
+ #github-activity,
+ #projects,
+ #instagram,
+ #contact {
+   scroll-margin-top: 5rem;
+ }
+
  #hero {
    isolation: isolate;
  }

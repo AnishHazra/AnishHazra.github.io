@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href.length < 2) return;
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+      const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({
           behavior: "smooth",
