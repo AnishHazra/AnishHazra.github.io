@@ -168,9 +168,32 @@ function renderProjects() {
   }
 }
 
+// Function to render the tech stack strip in the About section from real project data
+function renderTechStack() {
+  const techStackContainer = document.getElementById("tech-stack");
+  if (!techStackContainer) return;
+
+  const allTechnologies = [...projectsData.personal, ...projectsData.client].flatMap(
+    (project) => project.technologies
+  );
+  const uniqueTechnologies = [...new Set(allTechnologies)];
+
+  techStackContainer.innerHTML = uniqueTechnologies
+    .map(
+      (tech) =>
+        `<span class="px-4 py-2 bg-white border border-gray-200 text-gray-700 text-sm font-medium !rounded-button">${tech}</span>`
+    )
+    .join("");
+}
+
 // Load projects when DOM is ready
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", renderProjects);
-} else {
+function initProjects() {
   renderProjects();
+  renderTechStack();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initProjects);
+} else {
+  initProjects();
 }
