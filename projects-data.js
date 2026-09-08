@@ -73,7 +73,7 @@ function createProjectCard(project, delay) {
   ).join('');
 
   const storeLinksHTML = project.hasStoreLinks ? `
-    <div class="flex gap-4 justify-center mt-8">
+    <div class="flex gap-4 justify-start mt-8">
       <a href="${project.appStoreUrl}" target="_blank" rel="noopener noreferrer"
         class="transition-transform hover:scale-105">
         <img src="assets/images/App_Store_Badge.png" alt="Download on the App Store"
