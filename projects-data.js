@@ -2,90 +2,129 @@
 const projectsData = {
   personal: [
     {
-      id: 'fitness-tracker',
-      title: 'FitTracker Pro',
-      description: 'A comprehensive fitness tracking app with workout plans, nutrition tracking, and progress analytics.',
-      image: 'https://res.cloudinary.com/dbnwetu3r/image/upload/v1730920043/portfolio/vehc9b18s2ql5voeoxuf.png',
-      technologies: ['React Native', 'Firebase'],
-      appStoreUrl: 'https://apps.apple.com/app/your-app-id',
-      playStoreUrl: 'https://play.google.com/store/apps/details?id=your.package.name',
-      hasStoreLinks: true
+      id: "omli",
+      title: "Omli: Think Speak & Learn",
+      description:
+        "Omli is an AI-powered educational and communication development application designed to help children improve their speaking, thinking, creativity.",
+      image: "assets/images/omli.jpeg",
+      technologies: [
+        "Swift",
+        "SwiftUI",
+        "UIKit",
+        "MVVM Architecture",
+        "REST APIs",
+        "AI Integration",
+        "In-App Purchases",
+        "Push Notifications",
+        "Local Storage",
+        "User Authentication",
+      ],
+      appStoreUrl: "https://apps.apple.com/in/app/omli-think-speak-learn/id6754549572",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.omli.app&hl=en_IN",
     },
     {
-      id: 'weather-app',
-      title: 'WeatherWise',
-      description: 'Beautiful weather app with detailed forecasts, interactive maps, and personalized weather alerts.',
-      image: 'https://res.cloudinary.com/dbnwetu3r/image/upload/v1730920010/portfolio/ethsmvl7fujrjw2un63z.png',
-      technologies: ['Flutter', 'OpenWeather API'],
-      appStoreUrl: null,
-      playStoreUrl: null,
-      hasStoreLinks: true
+      id: "healo",
+      title: "Healo: AI Healing Companion",
+      description:
+        "Healo is an AI-powered mental wellness and emotional health application designed to help users improve their well-being through personalized conversations.",
+      image: "assets/images/healo.jpeg",
+      technologies: [
+        "Flutter",
+        "Dart",
+        "MVVM Architecture",
+        "REST APIs",
+        "AI Integration",
+        "Push Notifications",
+        "Audio Streaming",
+        "Local Storage",
+        "User Authentication",
+      ],
+      appStoreUrl: "https://apps.apple.com/in/app/healo-ai-healing-companion/id6529520211",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=healoai.infiheal.app&hl=en_IN",
     },
     {
-      id: 'task-manager',
-      title: 'TaskMaster',
-      description: 'Intuitive task management app with team collaboration, project tracking, and productivity insights.',
-      image: 'https://res.cloudinary.com/dbnwetu3r/image/upload/v1738530494/ay3fynpptn6au2izelbi.png',
-      technologies: ['SwiftUI', 'Core Data'],
-      appStoreUrl: null,
-      playStoreUrl: null,
-      hasStoreLinks: true
-    }
+      id: "spinx",
+      title: "SpinX",
+      description:
+        "Spinx is a modern mobile application developed to provide users with a seamless and engaging digital experience.",
+      image: "assets/images/spinx.jpeg",
+      technologies: ["Flutter", "Dart", "REST APIs", "MVVM Architecture", "State Management", "Push Notifications"],
+      appStoreUrl: false,
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.aaba.spinx&hl=en_IN",
+    },
   ],
   client: [
     {
-      id: 'ecommerce-app',
-      title: 'ShopEasy',
-      description: 'Full-featured e-commerce platform with payment integration, inventory management, and customer analytics.',
-      image: 'https://readdy.ai/api/search-image?query=E-commerce%20mobile%20app%20interface%2C%20shopping%20cart%2C%20product%20catalog%2C%20modern%20retail%20design%2C%20professional%20mobile%20commerce%20UI&width=400&height=300&seq=ecommerce-app&orientation=landscape',
-      technologies: ['React Native', 'Stripe'],
-      appStoreUrl: null,
-      playStoreUrl: null,
-      hasStoreLinks: true
+      id: "dotnotes",
+      title: "Dotnotes",
+      description: "Free study material aggregation for the modern student.",
+      image: "assets/images/dotnotes.jpeg",
+      technologies: ["React", "Tailwind", "Flask", "Supabase"],
+      websiteUrl: "https://dotnotes.in/",
     },
     {
-      id: 'banking-app',
-      title: 'SecureBank',
-      description: 'Secure banking application with biometric authentication, real-time transactions, and financial insights.',
-      image: 'https://readdy.ai/api/search-image?query=Banking%20mobile%20app%20interface%2C%20financial%20dashboard%2C%20secure%20design%2C%20transaction%20history%2C%20modern%20fintech%20UI%20design&width=400&height=300&seq=banking-app&orientation=landscape',
-      technologies: ['Flutter', 'Blockchain'],
-      appStoreUrl: null,
-      playStoreUrl: null,
-      hasStoreLinks: true
+      id: "chawlas2",
+      title: "Chawlas2",
+      description:
+        "Three generations. 65 years. One unforgettable Cream Chicken. From a humble kitchen in Haldwani to 170+ outlets across 6 countries — served home-style, exactly the way Sardar Attar Singh Chawla intended.",
+      image: "assets/images/chawlas.jpeg",
+      technologies: ["React", "Tailwind", "Firebase"],
+      websiteUrl: "https://chawlas2.com/",
     },
     {
-      id: 'social-app',
-      title: 'ConnectHub',
-      description: 'Social networking platform with real-time messaging, content sharing, and community building features.',
-      image: 'https://readdy.ai/api/search-image?query=Social%20media%20mobile%20app%20interface%2C%20chat%20features%2C%20user%20profiles%2C%20modern%20social%20networking%20design%2C%20engaging%20mobile%20UI&width=400&height=300&seq=social-app&orientation=landscape',
-      technologies: ['Kotlin', 'WebSocket'],
-      appStoreUrl: null,
-      playStoreUrl: null,
-      hasStoreLinks: true
-    }
-  ]
+      id: "completefamilywithpets",
+      title: "Complete Family With Pets",
+      description: "Find Your Perfect Furry Friend.",
+      image: "assets/images/petcare.jpeg",
+      technologies: ["HTML", "CSS", "JS"],
+      websiteUrl: "https://completefamilywithpets.netlify.app/",
+    },
+  ],
 };
 
 // Function to create project card HTML
 function createProjectCard(project, delay) {
-  const technologiesHTML = project.technologies.map(tech =>
-    `<span class="px-3 py-1 bg-primary/20 text-primary text-sm !rounded-button">${tech}</span>`
-  ).join('');
+  const technologiesHTML = project.technologies
+    .map((tech) => `<span class="px-3 py-1 bg-primary/20 text-primary text-sm !rounded-button">${tech}</span>`)
+    .join("");
 
-  const storeLinksHTML = project.hasStoreLinks ? `
-    <div class="flex gap-4 justify-start mt-8">
+  const appStoreHTML = project.appStoreUrl
+    ? `
       <a href="${project.appStoreUrl}" target="_blank" rel="noopener noreferrer"
-        class="transition-transform hover:scale-105">
+        onclick="event.stopPropagation()" class="transition-transform hover:scale-105">
         <img src="assets/images/App_Store_Badge.png" alt="Download on the App Store"
           class="h-[2rem] sm:h-[2rem]" />
       </a>
-      <a href="${project.playStoreUrl}" target="_blank"
-        rel="noopener noreferrer" class="transition-transform hover:scale-105">
+    `
+    : "";
+
+  const playStoreHTML = project.playStoreUrl
+    ? `
+      <a href="${project.playStoreUrl}" target="_blank" rel="noopener noreferrer"
+        onclick="event.stopPropagation()" class="transition-transform hover:scale-105">
         <img src="assets/images/Google_Play_Store_badge.png" alt="Get it on Google Play"
           class="h-[2rem] sm:h-[2rem]" />
       </a>
-    </div>
-  ` : '';
+    `
+    : "";
+
+  const websiteHTML = project.websiteUrl
+    ? `
+      <a href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer"
+        onclick="event.stopPropagation()"
+        class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 !rounded-button font-medium text-sm hover:bg-primary/90 transition-colors">
+        <i class="ri-external-link-line"></i>
+        Visit Website
+      </a>
+    `
+    : "";
+
+  const storeLinksHTML =
+    appStoreHTML || playStoreHTML
+      ? `<div class="flex gap-4 justify-start mt-8">${appStoreHTML}${playStoreHTML}</div>`
+      : websiteHTML
+        ? `<div class="flex justify-start mt-8">${websiteHTML}</div>`
+        : "";
 
   return `
     <div class="bg-gray-100 !rounded-button overflow-hidden card-hover cursor-pointer project-card"
@@ -108,30 +147,30 @@ function createProjectCard(project, delay) {
 
 // Function to render projects
 function renderProjects() {
-  const personalProjectsContainer = document.querySelector('#personal-projects .grid');
-  const clientProjectsContainer = document.querySelector('#client-projects .grid');
+  const personalProjectsContainer = document.querySelector("#personal-projects .grid");
+  const clientProjectsContainer = document.querySelector("#client-projects .grid");
 
   if (personalProjectsContainer) {
     personalProjectsContainer.innerHTML = projectsData.personal
-      .map((project, index) => createProjectCard(project, 400 + (index * 100)))
-      .join('');
+      .map((project, index) => createProjectCard(project, 400 + index * 100))
+      .join("");
   }
 
   if (clientProjectsContainer) {
     clientProjectsContainer.innerHTML = projectsData.client
-      .map((project, index) => createProjectCard(project, 400 + (index * 100)))
-      .join('');
+      .map((project, index) => createProjectCard(project, 400 + index * 100))
+      .join("");
   }
 
   // Re-initialize AOS for dynamically loaded content
-  if (typeof AOS !== 'undefined') {
+  if (typeof AOS !== "undefined") {
     AOS.refresh();
   }
 }
 
 // Load projects when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', renderProjects);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", renderProjects);
 } else {
   renderProjects();
 }
