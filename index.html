@@ -166,27 +166,38 @@
     <!-- GitHub Contributions -->
     <section class="py-20 bg-primary/5" id="github-activity">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2
-            class="font-display text-4xl lg:text-5xl font-black mb-6 underline-animation tracking-tight"
-            data-aos="fade-up"
-          >
-            GitHub Contributions
-          </h2>
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10" data-aos="fade-up">
+          <div>
+            <p class="text-primary font-semibold tracking-widest text-sm uppercase mb-3">GitHub</p>
+            <h2 class="font-display text-4xl lg:text-5xl font-black tracking-tight">Building, daily.</h2>
+          </div>
+          <div class="flex gap-10 sm:gap-14">
+            <div>
+              <p class="font-display text-3xl lg:text-4xl font-bold text-primary" id="gh-total-contributions">—</p>
+              <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mt-1">Contributions this year</p>
+            </div>
+            <div>
+              <p class="font-display text-3xl lg:text-4xl font-bold text-gray-900" id="gh-streak">—</p>
+              <p class="text-xs font-semibold tracking-wider text-gray-400 uppercase mt-1">Day streak</p>
+            </div>
+          </div>
         </div>
-        <div
-          class="bg-white border border-primary/20 shadow-sm !rounded-lg p-6 sm:p-8 overflow-x-auto"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <img
-            src="https://ghchart.rshah.org/40c463/AnishHazra"
-            alt="Anish Hazra's GitHub contribution graph"
-            class="min-w-[700px] w-full"
-            loading="lazy"
-          />
+
+        <div class="overflow-x-auto pb-2" data-aos="fade-up" data-aos-delay="200">
+          <div id="gh-heatmap" class="gh-heatmap"></div>
         </div>
-        <div class="text-center mt-6" data-aos="fade-up" data-aos-delay="400">
+
+        <div class="flex items-center gap-2 mt-4 text-sm text-gray-400" data-aos="fade-up" data-aos-delay="300">
+          <span>Less</span>
+          <span class="gh-legend-swatch" style="background-color: #ebedf0"></span>
+          <span class="gh-legend-swatch" style="background-color: #9be9a8"></span>
+          <span class="gh-legend-swatch" style="background-color: #40c463"></span>
+          <span class="gh-legend-swatch" style="background-color: #30a14e"></span>
+          <span class="gh-legend-swatch" style="background-color: #216e39"></span>
+          <span>More</span>
+        </div>
+
+        <div class="mt-8" data-aos="fade-up" data-aos-delay="400">
           <a
             href="https://github.com/AnishHazra"
             target="_blank"

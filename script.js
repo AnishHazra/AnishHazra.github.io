@@ -304,3 +304,42 @@ document.addEventListener("DOMContentLoaded", function () {
     targetY = 50;
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const heatmap = document.getElementById("gh-heatmap");
+  const totalEl = document.getElementById("gh-total-contributions");
+  const streakEl = document.getElementById("gh-streak");
+  if (!heatmap || !totalEl || !streakEl) return;
+
+  const levelColors = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"];
+
+  fetch("https://github-contributions-api.jogruber.de/v4/AnishHazra?y=last")
+    .then((res) => res.json())
+    .then((data) => {
+      const contributions = data.contributions || [];
+
+      totalEl.textContent = (data.total && data.total.lastYear ? data.total.lastYear : 0).toLocaleString();
+
+      let streak = 0;
+      for (let i = contributions.length - 1; i >= 0; i--) {
+        if (contributions[i].count > 0) {
+          streak++;
+        } else {
+          break;
+        }
+      }
+      streakEl.textContent = streak;
+
+      heatmap.innerHTML = contributions
+        .map(
+          (day) =>
+            `<span style="background-color:${levelColors[day.level]}" title="${day.date}: ${day.count} contributions"></span>`
+        )
+        .join("");
+    })
+    .catch(() => {
+      totalEl.textContent = "—";
+      streakEl.textContent = "—";
+      heatmap.innerHTML = '<p class="text-gray-400 text-sm">Could not load GitHub activity right now.</p>';
+    });
+});
