@@ -47,6 +47,13 @@
    -webkit-mask-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), #000 0%, #000 45%, transparent 90%);
  }
 
+ .hero-name-gradient {
+   background: linear-gradient(90deg, #78b5e3 0%, #4f46e5 100%);
+   -webkit-background-clip: text;
+   background-clip: text;
+   color: transparent;
+ }
+
  .hero-spotlight {
    position: absolute;
    inset: 0;
