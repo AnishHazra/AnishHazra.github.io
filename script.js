@@ -270,3 +270,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.getElementById("hero");
+  const gridContainer = hero.querySelector(".hero-grid-container");
+  if (!hero || !gridContainer) return;
+
+  let targetX = 50,
+    targetY = 50,
+    currentX = 50,
+    currentY = 50;
+  let rafId = null;
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+
+    gridContainer.style.setProperty("--mx", currentX + "%");
+    gridContainer.style.setProperty("--my", currentY + "%");
+
+    rafId = requestAnimationFrame(animate);
+  }
+
+  hero.addEventListener("mousemove", function (e) {
+    const rect = hero.getBoundingClientRect();
+    targetX = ((e.clientX - rect.left) / rect.width) * 100;
+    targetY = ((e.clientY - rect.top) / rect.height) * 100;
+    if (!rafId) rafId = requestAnimationFrame(animate);
+  });
+
+  hero.addEventListener("mouseleave", function () {
+    targetX = 50;
+    targetY = 50;
+  });
+});
