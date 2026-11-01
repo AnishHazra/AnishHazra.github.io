@@ -42,7 +42,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/images/img.png" />
     <script src="projects-data.js"></script>
@@ -325,15 +324,14 @@
             </div>
           </div>
 
-          <!-- Live post grid (LightWidget) -->
-          <div id="instagram-widget">
-            <iframe
-              src="//lightwidget.com/widgets/c5bd40834f5a55b991090bd6106c9379.html"
-              scrolling="no"
-              allowtransparency="true"
-              class="lightwidget-widget"
-              style="width: 100%; border: 0; overflow: hidden"
-            ></iframe>
+          <!-- Filled by script.js from the Behold feed -->
+          <div id="instagram-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+            <div class="aspect-square bg-gray-100 animate-pulse"></div>
+            <div class="aspect-square bg-gray-100 animate-pulse"></div>
+            <div class="aspect-square bg-gray-100 animate-pulse"></div>
+            <div class="aspect-square bg-gray-100 animate-pulse"></div>
+            <div class="aspect-square bg-gray-100 animate-pulse"></div>
+            <div class="aspect-square bg-gray-100 animate-pulse"></div>
           </div>
         </div>
       </div>
