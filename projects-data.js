@@ -6,7 +6,7 @@ const projectsData = {
       title: "Omli: Think Speak & Learn",
       description:
         "Omli is an AI-powered educational and communication development application designed to help children improve their speaking, thinking, creativity.",
-      image: "assets/images/projects/omlikids.jpeg",
+      image: "assets/images/projects/omli.jpg",
       technologies: [
         "Swift",
         "SwiftUI",
