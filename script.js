@@ -122,13 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "WeatherWise",
       description:
         "Beautiful and intuitive weather application providing detailed forecasts, interactive maps, and personalized weather alerts. Built with modern design principles and smooth animations.",
-      features: [
-        "7-Day Forecast",
-        "Interactive Maps",
-        "Weather Alerts",
-        "Location-based Services",
-        "Offline Support",
-      ],
+      features: ["7-Day Forecast", "Interactive Maps", "Weather Alerts", "Location-based Services", "Offline Support"],
       tech: ["Flutter", "OpenWeather API", "Google Maps", "SQLite"],
       link: "https://github.com/alexjohnson/weatherwise",
     },
@@ -136,13 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "TaskMaster",
       description:
         "Intuitive task management application with team collaboration features, project tracking, and productivity insights. Designed for both individual and team productivity.",
-      features: [
-        "Task Management",
-        "Team Collaboration",
-        "Project Tracking",
-        "Time Tracking",
-        "Productivity Reports",
-      ],
+      features: ["Task Management", "Team Collaboration", "Project Tracking", "Time Tracking", "Productivity Reports"],
       tech: ["SwiftUI", "Core Data", "CloudKit", "Combine"],
       link: "https://github.com/alexjohnson/taskmaster",
     },
@@ -178,13 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "ConnectHub",
       description:
         "Modern social networking platform with real-time messaging, content sharing, and community building features. Designed to bring people together through technology.",
-      features: [
-        "Real-time Messaging",
-        "Content Sharing",
-        "Community Groups",
-        "Live Streaming",
-        "Privacy Controls",
-      ],
+      features: ["Real-time Messaging", "Content Sharing", "Community Groups", "Live Streaming", "Privacy Controls"],
       tech: ["Kotlin", "WebSocket", "Firebase", "MediaPlayer"],
       link: "https://github.com/alexjohnson/connecthub",
     },
@@ -335,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
       heatmap.innerHTML = contributions
         .map(
           (day) =>
-            `<span style="background-color:${levelColors[day.level]}" title="${day.date}: ${day.count} contributions"></span>`
+            `<span style="background-color:${levelColors[day.level]}" title="${day.date}: ${day.count} contributions"></span>`,
         )
         .join("");
     })
@@ -344,4 +326,121 @@ document.addEventListener("DOMContentLoaded", function () {
       streakEl.textContent = "—";
       heatmap.innerHTML = '<p class="text-gray-400 text-sm">Could not load GitHub activity right now.</p>';
     });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const INSTAGRAM_FEED_URL = "https://feeds.behold.so/oHgDgrLriU4HevhUCa3c";
+  const PROFILE_URL = "https://www.instagram.com/anish_codes/";
+  const MAX_POSTS = 6;
+
+  const FEATURED_POSTS = [
+    { url: "https://www.instagram.com/reel/DGIPEvbS2Zb/", image: "assets/images/instagram/DGIPEvbS2Zb.jpg" },
+    { url: "https://www.instagram.com/reel/De_x_ZSNSbX/", image: "assets/images/instagram/De_x_ZSNSbX.jpg" },
+    { url: "https://www.instagram.com/reel/C8cicwkSff_/" },
+    { url: "https://www.instagram.com/reel/C-kt7H-y_UT/", image: "assets/images/instagram/C-kt7H-y_UT.jpg" },
+    { url: "https://www.instagram.com/reel/DVaRwPmkv5s/", image: "assets/images/instagram/DVaRwPmkv5s.jpg" },
+    { url: "https://www.instagram.com/reel/DQdmDIgja7O/" },
+  ];
+
+  const grid = document.getElementById("instagram-grid");
+  if (!grid) return;
+
+  const escapeHtml = (str) =>
+    String(str || "").replace(
+      /[&<>"']/g,
+      (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
+    );
+
+  const formatCount = (n) => {
+    if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
+    if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
+    return String(n);
+  };
+
+  const shortcode = (url) => (String(url || "").match(/\/(?:p|reel|reels|tv)\/([^/?#]+)/) || [])[1];
+
+  const showFallback = () => {
+    grid.className = "";
+    grid.innerHTML = `
+      <a href="${PROFILE_URL}" target="_blank" rel="noopener noreferrer"
+        class="flex flex-col items-center justify-center gap-3 py-16 border-2 border-dashed border-gray-200 !rounded-lg text-gray-500 hover:text-primary hover:border-primary transition-colors">
+        <i class="ri-instagram-line text-4xl"></i>
+        <span class="font-medium">See the latest posts on Instagram</span>
+      </a>`;
+  };
+
+  const fromFeed = (post) => {
+    const sizes = post.sizes || {};
+    return {
+      url: post.permalink || PROFILE_URL,
+      image:
+        (sizes.medium && sizes.medium.mediaUrl) ||
+        post.thumbnailUrl ||
+        (post.mediaType !== "VIDEO" && post.mediaUrl) ||
+        "",
+      caption: post.prunedCaption || post.caption,
+      isVideo: post.mediaType === "VIDEO" || post.isReel,
+      isAlbum: post.mediaType === "CAROUSEL_ALBUM",
+    };
+  };
+
+  const renderTile = (post) => {
+    const caption = escapeHtml(post.caption || "Instagram post");
+    const badge = post.isVideo ? "ri-film-line" : post.isAlbum ? "ri-stack-line" : "";
+    return `
+      <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener noreferrer"
+        class="group relative block aspect-square overflow-hidden bg-gray-100">
+        <img src="${escapeHtml(post.image)}" alt="${caption}" loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+        ${badge ? `<i class="${badge} absolute top-2 right-2 text-white text-lg drop-shadow"></i>` : ""}
+        <span class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+          <i class="ri-instagram-line text-white text-3xl"></i>
+        </span>
+      </a>`;
+  };
+
+  const render = (data) => {
+    // Behold's v2 feeds return { posts: [...], followersCount, ... }; older feeds return a bare array.
+    const feedPosts = data ? (Array.isArray(data) ? data : data.posts || []).map(fromFeed) : [];
+
+    if (data && !Array.isArray(data)) {
+      const setStat = (key, value) => {
+        const el = document.querySelector(`#instagram-stats [data-stat="${key}"]`);
+        if (el && typeof value === "number") el.textContent = formatCount(value);
+      };
+      setStat("followers", data.followersCount);
+      setStat("following", data.followsCount);
+    }
+
+    let posts;
+    if (FEATURED_POSTS.length) {
+      posts = FEATURED_POSTS.map((pick) => {
+        const match = feedPosts.find((p) => shortcode(p.url) === shortcode(pick.url)) || {};
+        return {
+          url: pick.url,
+          image: pick.image || match.image,
+          caption: pick.caption || match.caption,
+          isVideo: match.isVideo || /\/reels?\//.test(pick.url),
+          isAlbum: match.isAlbum,
+        };
+      }).filter((p) => p.image);
+    } else {
+      posts = feedPosts.slice(0, MAX_POSTS);
+    }
+
+    if (!posts.length) return showFallback();
+    grid.innerHTML = posts.map(renderTile).join("");
+  };
+
+  if (!INSTAGRAM_FEED_URL) {
+    render(null);
+    return;
+  }
+
+  fetch(INSTAGRAM_FEED_URL)
+    .then((res) => {
+      if (!res.ok) throw new Error(res.status);
+      return res.json();
+    })
+    .then(render)
+    .catch(() => render(null));
 });
