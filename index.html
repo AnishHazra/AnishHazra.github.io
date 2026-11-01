@@ -42,9 +42,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="style.css?v=9" />
     <link rel="icon" type="image/png" href="assets/images/img.png" />
-    <script src="projects-data.js?v=2"></script>
+    <script src="projects-data.js?v=17"></script>
     <script src="script.js?v=2"></script>
   </head>
 
@@ -222,42 +222,44 @@
 
     <!-- Projects -->
     <section class="py-20 bg-gray" id="projects">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2
-            class="font-display text-4xl lg:text-5xl font-black mb-6 underline-animation tracking-tight"
-            data-aos="fade-up"
-          >
-            PROJECTS
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            Explore my projects of mobile applications and websites.
-          </p>
-        </div>
-        <div class="flex justify-center mb-12" data-aos="fade-up" data-aos-delay="300">
-          <div class="bg-gray-800 p-1 !rounded-button flex">
-            <button
-              class="tab-button px-6 py-3 !rounded-button font-semibold transition-all duration-300 active whitespace-nowrap"
-              data-tab="personal"
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="projects-track">
+        <div class="projects-sticky">
+          <div class="text-center mb-4 sm:mb-16">
+            <h2
+              class="font-display text-3xl sm:text-4xl lg:text-5xl font-black mb-2 sm:mb-6 underline-animation tracking-tight"
+              data-aos="fade-up"
             >
-              Applications
-            </button>
-            <button
-              class="tab-button px-6 py-3 !rounded-button font-semibold transition-all duration-300 text-gray-400 whitespace-nowrap"
-              data-tab="client"
-            >
-              Websites
-            </button>
+              PROJECTS
+            </h2>
+            <p class="text-sm sm:text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+              Apps and websites I've built, from my own products to client work and team projects I've contributed to.
+            </p>
           </div>
-        </div>
-        <!-- Personal Projects -->
-        <div class="tab-content" id="personal-projects">
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-        </div>
+          <div class="flex justify-center mb-2 sm:mb-12" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-gray-800 p-1 !rounded-button flex">
+              <button
+                class="tab-button px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base !rounded-button font-semibold transition-all duration-300 active whitespace-nowrap"
+                data-tab="personal"
+              >
+                Applications
+              </button>
+              <button
+                class="tab-button px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base !rounded-button font-semibold transition-all duration-300 text-gray-400 whitespace-nowrap"
+                data-tab="client"
+              >
+                Websites
+              </button>
+            </div>
+          </div>
+          <!-- Personal Projects -->
+          <div class="tab-content" id="personal-projects">
+            <div class="project-stack grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+          </div>
 
-        <!-- Client Projects -->
-        <div class="tab-content hidden" id="client-projects">
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+          <!-- Client Projects -->
+          <div class="tab-content hidden" id="client-projects">
+            <div class="project-stack grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+          </div>
         </div>
       </div>
     </section>
