@@ -84,16 +84,25 @@ const projectsData = {
 
 // Function to create project card HTML
 function createProjectCard(project, delay) {
-  const technologiesHTML = project.technologies
-    .map((tech) => `<span class="px-3 py-1 bg-primary/20 text-primary text-sm !rounded-button">${tech}</span>`)
-    .join("");
+  const MOBILE_TAGS = 3;
+  const extraTags = project.technologies.length - MOBILE_TAGS;
+  const technologiesHTML =
+    project.technologies
+      .map(
+        (tech, i) =>
+          `<span class="${i >= MOBILE_TAGS ? "hidden sm:inline-block" : ""} px-2 py-0.5 sm:px-3 sm:py-1 bg-primary/20 text-primary text-[10px] sm:text-sm !rounded-button">${tech}</span>`
+      )
+      .join("") +
+    (extraTags > 0
+      ? `<span class="sm:hidden px-2 py-0.5 bg-primary/20 text-primary text-[10px] !rounded-button">+${extraTags}</span>`
+      : "");
 
   const appStoreHTML = project.appStoreUrl
     ? `
       <a href="${project.appStoreUrl}" target="_blank" rel="noopener noreferrer"
         onclick="event.stopPropagation()" class="transition-transform hover:scale-105">
         <img src="assets/images/App_Store_Badge.png" alt="Download on the App Store"
-          class="h-[2rem] sm:h-[2rem]" />
+          class="h-7 sm:h-[2rem]" />
       </a>
     `
     : "";
@@ -103,7 +112,7 @@ function createProjectCard(project, delay) {
       <a href="${project.playStoreUrl}" target="_blank" rel="noopener noreferrer"
         onclick="event.stopPropagation()" class="transition-transform hover:scale-105">
         <img src="assets/images/Google_Play_Store_badge.png" alt="Get it on Google Play"
-          class="h-[2rem] sm:h-[2rem]" />
+          class="h-7 sm:h-[2rem]" />
       </a>
     `
     : "";
@@ -112,7 +121,7 @@ function createProjectCard(project, delay) {
     ? `
       <a href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer"
         onclick="event.stopPropagation()"
-        class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 !rounded-button font-medium text-sm hover:bg-primary/90 transition-colors">
+        class="inline-flex items-center gap-1.5 sm:gap-2 bg-primary text-white px-3 py-2 sm:px-5 sm:py-2.5 !rounded-button font-medium text-xs sm:text-sm hover:bg-primary/90 transition-colors">
         <i class="ri-external-link-line"></i>
         Visit Website
       </a>
@@ -121,22 +130,22 @@ function createProjectCard(project, delay) {
 
   const storeLinksHTML =
     appStoreHTML || playStoreHTML
-      ? `<div class="flex gap-4 justify-start mt-8">${appStoreHTML}${playStoreHTML}</div>`
+      ? `<div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-4 mt-auto pt-4 sm:pt-8">${appStoreHTML}${playStoreHTML}</div>`
       : websiteHTML
-        ? `<div class="flex justify-start mt-8">${websiteHTML}</div>`
+        ? `<div class="flex justify-start mt-auto pt-4 sm:pt-8">${websiteHTML}</div>`
         : "";
 
   return `
-    <div class="bg-gray-100 !rounded-button overflow-hidden card-hover cursor-pointer project-card"
+    <div class="flex flex-col bg-gray-100 !rounded-button overflow-hidden card-hover cursor-pointer project-card"
       data-aos="fade-up" data-aos-delay="${delay}" data-project="${project.id}">
       <img src="${project.image}"
-        alt="${project.title}" class="w-full h-55 object-cover" />
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-2">${project.title}</h3>
-        <p class="text-gray-400 mb-4">
+        alt="${project.title}" class="w-full h-32 sm:h-auto object-cover" />
+      <div class="flex flex-col flex-1 p-3 sm:p-6">
+        <h3 class="text-sm sm:text-xl font-bold leading-snug mb-1 sm:mb-2">${project.title}</h3>
+        <p class="text-xs sm:text-base text-gray-400 mb-3 sm:mb-4 line-clamp-3 sm:line-clamp-none">
           ${project.description}
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-1 sm:gap-2">
           ${technologiesHTML}
         </div>
         ${storeLinksHTML}
