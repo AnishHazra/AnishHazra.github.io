@@ -413,11 +413,32 @@ function initProjectStack() {
   layout();
 }
 
+// Picks the store for the visitor's device; desktops get Google Play since it opens in any browser
+function storeLinkFor(project) {
+  if (project.websiteUrl) return project.websiteUrl;
+  const ua = navigator.userAgent;
+  // iPadOS reports itself as a Mac, so touch support is what tells them apart
+  const isApple = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  return isApple ? project.appStoreUrl || project.playStoreUrl : project.playStoreUrl || project.appStoreUrl;
+}
+
+function initProjectLinks() {
+  const allProjects = [...projectsData.personal, ...projectsData.client];
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest(".project-card");
+    if (!card || e.target.closest("a")) return;
+    const project = allProjects.find((p) => p.id === card.dataset.project);
+    const url = project && storeLinkFor(project);
+    if (url) window.open(url, "_blank", "noopener");
+  });
+}
+
 // Load projects when DOM is ready
 function initProjects() {
   renderProjects();
   renderTechStack();
   initProjectStack();
+  initProjectLinks();
 }
 
 if (document.readyState === "loading") {
