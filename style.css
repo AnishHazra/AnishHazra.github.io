@@ -241,3 +241,52 @@
    background: #374151;
    transform: translateY(-5px);
  }
+ .project-stack-dots {
+   display: none;
+ }
+
+ @media (max-width: 639px) {
+   .projects-sticky {
+     position: sticky;
+     top: 4rem;
+     padding-top: 0.5rem;
+   }
+
+   .project-stack {
+     padding-top: 1.5rem;
+     grid-template-columns: minmax(0, 1fr);
+     row-gap: 0.75rem;
+   }
+
+   /* Scroll position drives these cards directly, so AOS's fade and transition must not interfere */
+   .project-stack .project-card {
+     grid-area: 1 / 1;
+     transform-origin: top center;
+     transition: none !important;
+     will-change: transform, opacity;
+     box-shadow:
+       0 0 0 1px rgba(15, 23, 42, 0.06),
+       0 -6px 20px rgba(15, 23, 42, 0.06),
+       0 12px 28px rgba(15, 23, 42, 0.14);
+   }
+
+   .project-stack-dots {
+     grid-row: 2;
+     display: flex;
+     justify-content: center;
+     gap: 0.5rem;
+   }
+
+   .project-stack-dots button {
+     width: 0.5rem;
+     height: 0.5rem;
+     border-radius: 9999px;
+     background: #d1d5db;
+     transition: width 0.3s ease, background-color 0.3s ease;
+   }
+
+   .project-stack-dots button.is-active {
+     width: 1.5rem;
+     background: #78b5e3;
+   }
+ }

@@ -23,6 +23,16 @@ const projectsData = {
       playStoreUrl: "https://play.google.com/store/apps/details?id=com.omli.app&hl=en_IN",
     },
     {
+      id: "localnokri",
+      title: "Local Nokri: Local Jobs & Hire",
+      description:
+        "Local Nokri connects job seekers with nearby employers, letting them search local vacancies by city and category, apply, chat in-app, and share PDF resumes.",
+      image: "assets/images/projects/local-nokri.jpg",
+      technologies: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "Firebase Storage", "In-App Chat"],
+      appStoreUrl: false,
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.aaba.localnokri",
+    },
+    {
       id: "snapplant",
       title: "Snap Plant: AI Plant Identifier",
       description:
@@ -53,11 +63,21 @@ const projectsData = {
       playStoreUrl: "https://play.google.com/store/apps/details?id=healoai.infiheal.app&hl=en_IN",
     },
     {
+      id: "cleardry",
+      title: "Cleardry: Dry-Cleaning Services",
+      description:
+        "Cleardry lets customers book doorstep pickup and delivery for dry cleaning, express dry cleaning, and sofa and carpet spa services, with phone sign-up and order tracking.",
+      image: "assets/images/projects/cleardry.jpg",
+      technologies: ["Kotlin", "Android SDK", "OTP Authentication", "REST APIs"],
+      appStoreUrl: false,
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.atikin.cleardry",
+    },
+    {
       id: "meraminitheatre",
       title: "Mera Mini Theatre",
       description:
         "Mera Mini Theatre is a social platform for turning photos into slideshow-style videos and sharing them with a community of creators who can like, comment, and discover new stories.",
-      image: "assets/images/projects/meraminitheatre.jpeg",
+      image: "assets/images/projects/mmt.jpg",
       technologies: ["Flutter", "Dart", "Firebase", "Firebase Auth", "Cloud Firestore", "Firebase Storage"],
       appStoreUrl: false,
       playStoreUrl: "https://play.google.com/store/apps/details?id=com.app.mera_mini_theatre",
@@ -80,36 +100,44 @@ const projectsData = {
       playStoreUrl: false,
     },
     {
-      id: "omli",
-      title: "Omli: Think Speak & Learn",
-      description:
-        "Omli is an AI-powered educational and communication development application designed to help children improve their speaking, thinking, creativity.",
-      image: "assets/images/projects/omlikids.jpeg",
-      technologies: [
-        "Swift",
-        "SwiftUI",
-        "UIKit",
-        "MVVM Architecture",
-        "REST APIs",
-        "AI Integration",
-        "In-App Purchases",
-        "Push Notifications",
-        "Local Storage",
-        "User Authentication",
-      ],
-      appStoreUrl: "https://apps.apple.com/in/app/omli-think-speak-learn/id6754549572",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.omli.app&hl=en_IN",
-    },
-
-    {
       id: "spinx",
       title: "SpinX",
       description:
         "Spinx is a modern mobile application developed to provide users with a seamless and engaging digital experience.",
-      image: "assets/images/spinx.jpeg",
+      image: "assets/images/projects/spinx.jpg",
       technologies: ["Flutter", "Dart", "REST APIs", "MVVM Architecture", "State Management", "Push Notifications"],
       appStoreUrl: false,
       playStoreUrl: "https://play.google.com/store/apps/details?id=com.aaba.spinx&hl=en_IN",
+    },
+    {
+      id: "qrx",
+      title: "QRX: QR Generator & Scanner",
+      description:
+        "QRX is a fast, privacy-focused QR and barcode scanner that reads codes from the camera or gallery and generates custom WiFi, contact, and link QR codes, even offline.",
+      image: "assets/images/projects/qrx.jpg",
+      technologies: ["Flutter", "Dart", "Camera", "Barcode Scanning", "QR Generation", "Offline Support"],
+      appStoreUrl: false,
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.aaba.qrx",
+    },
+    {
+      id: "vastucompass",
+      title: "Vastu Compass: Vastu App Tips",
+      description:
+        "Vastu Compass is a digital compass and Vastu Shastra guide that shows exact directions with live sensor readings and gives room-by-room tips for homes, offices, and plots.",
+      image: "assets/images/projects/compass.jpg",
+      technologies: ["Flutter", "Dart", "Compass Sensor", "Localization", "Offline Support"],
+      appStoreUrl: false,
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.aaba.vastu_compass",
+    },
+    {
+      id: "hbrt",
+      title: "HBRT: RERA Rules, Home Guide",
+      description:
+        "HBRT is a home-buying guide for India that explains the RERA Act in plain language, flags builder red flags, and includes EMI and home loan calculators plus Vastu tips.",
+      image: "assets/images/projects/hbrt.jpg",
+      technologies: ["Flutter", "Dart", "EMI Calculator", "Compass Sensor", "Local Storage"],
+      appStoreUrl: false,
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.aaba.hbrt",
     },
   ],
   client: [
@@ -143,17 +171,17 @@ const projectsData = {
 
 // Function to create project card HTML
 function createProjectCard(project, delay) {
-  const MOBILE_TAGS = 3;
+  const MOBILE_TAGS = 4;
   const extraTags = project.technologies.length - MOBILE_TAGS;
   const technologiesHTML =
     project.technologies
       .map(
         (tech, i) =>
-          `<span class="${i >= MOBILE_TAGS ? "hidden sm:inline-block" : ""} px-2 py-0.5 sm:px-3 sm:py-1 bg-primary/20 text-primary text-[10px] sm:text-sm !rounded-button">${tech}</span>`,
+          `<span class="${i >= MOBILE_TAGS ? "hidden sm:inline-block" : ""} px-2.5 py-1 sm:px-3 bg-primary/20 text-primary text-xs sm:text-sm !rounded-button">${tech}</span>`,
       )
       .join("") +
     (extraTags > 0
-      ? `<span class="sm:hidden px-2 py-0.5 bg-primary/20 text-primary text-[10px] !rounded-button">+${extraTags}</span>`
+      ? `<span class="sm:hidden px-2.5 py-1 bg-primary/20 text-primary text-xs !rounded-button">+${extraTags}</span>`
       : "");
 
   const appStoreHTML = project.appStoreUrl
@@ -161,7 +189,7 @@ function createProjectCard(project, delay) {
       <a href="${project.appStoreUrl}" target="_blank" rel="noopener noreferrer"
         onclick="event.stopPropagation()" class="transition-transform hover:scale-105">
         <img src="assets/images/App_Store_Badge.png" alt="Download on the App Store"
-          class="h-7 sm:h-[2rem]" />
+          class="h-[2rem]" />
       </a>
     `
     : "";
@@ -171,7 +199,7 @@ function createProjectCard(project, delay) {
       <a href="${project.playStoreUrl}" target="_blank" rel="noopener noreferrer"
         onclick="event.stopPropagation()" class="transition-transform hover:scale-105">
         <img src="assets/images/Google_Play_Store_badge.png" alt="Get it on Google Play"
-          class="h-7 sm:h-[2rem]" />
+          class="h-[2rem]" />
       </a>
     `
     : "";
@@ -180,7 +208,7 @@ function createProjectCard(project, delay) {
     ? `
       <a href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer"
         onclick="event.stopPropagation()"
-        class="inline-flex items-center gap-1.5 sm:gap-2 bg-primary text-white px-3 py-2 sm:px-5 sm:py-2.5 !rounded-button font-medium text-xs sm:text-sm hover:bg-primary/90 transition-colors">
+        class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 !rounded-button font-medium text-sm hover:bg-primary/90 transition-colors">
         <i class="ri-external-link-line"></i>
         Visit Website
       </a>
@@ -189,22 +217,22 @@ function createProjectCard(project, delay) {
 
   const storeLinksHTML =
     appStoreHTML || playStoreHTML
-      ? `<div class="flex flex-col sm:flex-row items-start gap-2 sm:gap-4 mt-auto pt-4 sm:pt-8">${appStoreHTML}${playStoreHTML}</div>`
+      ? `<div class="flex gap-3 sm:gap-4 mt-auto pt-5 sm:pt-8">${appStoreHTML}${playStoreHTML}</div>`
       : websiteHTML
-        ? `<div class="flex justify-start mt-auto pt-4 sm:pt-8">${websiteHTML}</div>`
+        ? `<div class="flex justify-start mt-auto pt-5 sm:pt-8">${websiteHTML}</div>`
         : "";
 
   return `
     <div class="flex flex-col bg-gray-100 !rounded-button overflow-hidden card-hover cursor-pointer project-card"
       data-aos="fade-up" data-aos-delay="${delay}" data-project="${project.id}">
       <img src="${project.image}"
-        alt="${project.title}" class="w-full h-32 sm:h-auto object-cover" />
-      <div class="flex flex-col flex-1 p-3 sm:p-6">
-        <h3 class="text-sm sm:text-xl font-bold leading-snug mb-1 sm:mb-2">${project.title}</h3>
-        <p class="text-xs sm:text-base text-gray-400 mb-3 sm:mb-4 line-clamp-3 sm:line-clamp-none">
+        alt="${project.title}" class="w-full h-auto object-cover" />
+      <div class="flex flex-col flex-1 p-5 sm:p-6">
+        <h3 class="text-lg sm:text-xl font-bold leading-snug mb-2">${project.title}</h3>
+        <p class="text-sm sm:text-base text-gray-400 mb-4 line-clamp-3 sm:line-clamp-none">
           ${project.description}
         </p>
-        <div class="flex flex-wrap gap-1 sm:gap-2">
+        <div class="flex flex-wrap gap-2">
           ${technologiesHTML}
         </div>
         ${storeLinksHTML}
@@ -252,10 +280,126 @@ function renderTechStack() {
     .join("");
 }
 
+// Mobile only: pins the projects header and visible tab under the navbar; scrolling slides each card up over the last
+function initProjectStack() {
+  const mobile = window.matchMedia("(max-width: 639px)");
+  const NAV_HEIGHT = 64;
+  // Fraction of each scroll step spent holding a card still before the next one starts moving in
+  const HOLD = 0.3;
+  let ticking = false;
+
+  document.querySelectorAll(".project-stack").forEach((stack) => {
+    const count = stack.querySelectorAll(".project-card").length;
+    stack.insertAdjacentHTML(
+      "beforeend",
+      `<div class="project-stack-dots">${'<button type="button" aria-label="Show project"></button>'.repeat(count)}</div>`,
+    );
+  });
+
+  const clamp = (v) => Math.min(1, Math.max(0, v));
+  const easeOut = (v) => 1 - Math.pow(1 - v, 3);
+  const track = document.getElementById("projects-track");
+  const pinned = track && track.querySelector(".projects-sticky");
+  if (!pinned) return;
+  const activeStack = () => document.querySelector(".tab-content:not(.hidden) .project-stack");
+  const step = () => window.innerHeight * 0.45;
+
+  // 100svh stays fixed while mobile toolbars show/hide, unlike innerHeight
+  const viewportProbe = document.createElement("div");
+  viewportProbe.style.cssText = "position:fixed;top:0;height:100svh;visibility:hidden;pointer-events:none";
+  document.body.appendChild(viewportProbe);
+
+  // Shrinks the cards when header + card won't fit the visible screen, instead of cropping them
+  function fitStack(stack) {
+    stack.style.zoom = "";
+    const available = viewportProbe.offsetHeight - NAV_HEIGHT - 8;
+    let zoom = 1;
+    // Zoomed content reflows, so one pass undershoots; a few passes converge
+    for (let i = 0; i < 6; i++) {
+      const over = pinned.getBoundingClientRect().height - available;
+      if (over <= 1 || zoom <= 0.65) break;
+      const stackHeight = stack.getBoundingClientRect().height;
+      zoom = Math.max(0.65, (zoom * (stackHeight - over)) / stackHeight);
+      stack.style.zoom = zoom;
+    }
+  }
+
+  function update() {
+    ticking = false;
+    const stack = activeStack();
+    if (!stack) return;
+    const cards = [...stack.querySelectorAll(".project-card")];
+    const dots = stack.querySelectorAll(".project-stack-dots button");
+
+    if (!mobile.matches) {
+      cards.forEach((card) => card.removeAttribute("style"));
+      return;
+    }
+
+    const t = (NAV_HEIGHT - track.getBoundingClientRect().top) / step();
+    const entered = cards.map((_, i) => (i === 0 ? 1 : easeOut(clamp((t - (i - 1) - HOLD) / (1 - HOLD)))));
+
+    cards.forEach((card, i) => {
+      const covered = Math.min(
+        2,
+        entered.slice(i + 1).reduce((sum, e) => sum + e, 0),
+      );
+      const y = (1 - entered[i]) * window.innerHeight - covered * 8;
+      card.style.transform = `translate3d(0, ${y}px, 0) scale(${1 - covered * 0.05})`;
+      card.style.opacity = covered > 1 ? 2 - covered : 1;
+      card.style.pointerEvents = covered > 0.5 ? "none" : "auto";
+    });
+
+    const active = entered.filter((e) => e > 0.5).length - 1;
+    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === active));
+  }
+
+  function layout() {
+    const stack = activeStack();
+    document.querySelectorAll(".project-stack").forEach((s) => (s.style.zoom = ""));
+    if (!mobile.matches || !stack) {
+      track.style.height = "";
+    } else {
+      fitStack(stack);
+      const count = stack.querySelectorAll(".project-card").length;
+      track.style.height = `${pinned.offsetHeight + (count - 1 + HOLD) * step()}px`;
+    }
+    update();
+  }
+
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".tab-button")) {
+      requestAnimationFrame(layout);
+      return;
+    }
+    const dot = e.target.closest(".project-stack-dots button");
+    if (!dot) return;
+    const i = [...dot.parentNode.children].indexOf(dot);
+    const trackTop = track.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
+    window.scrollTo({ top: trackTop + i * step() + 1, behavior: "smooth" });
+  });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking && mobile.matches) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true },
+  );
+  window.addEventListener("resize", layout);
+  mobile.addEventListener("change", layout);
+  window.addEventListener("load", layout);
+  layout();
+}
+
 // Load projects when DOM is ready
 function initProjects() {
   renderProjects();
   renderTechStack();
+  initProjectStack();
 }
 
 if (document.readyState === "loading") {
