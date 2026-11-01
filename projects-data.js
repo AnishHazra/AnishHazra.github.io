@@ -73,6 +73,16 @@ const projectsData = {
       playStoreUrl: "https://play.google.com/store/apps/details?id=com.atikin.cleardry",
     },
     {
+      id: "hny",
+      title: "HNY: Health Near You",
+      description:
+        "HNY helps people find verified dentists and dental clinics near them, view clinic details, and book appointments in a few taps.",
+      image: "assets/images/projects/hny.jpg",
+      technologies: ["Flutter", "Dart", "Firebase", "Firebase Auth", "Cloud Firestore", "Location Services"],
+      appStoreUrl: false,
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.app.hny",
+    },
+    {
       id: "meraminitheatre",
       title: "Mera Mini Theatre",
       description:
