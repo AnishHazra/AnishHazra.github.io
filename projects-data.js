@@ -171,18 +171,12 @@ const projectsData = {
 
 // Function to create project card HTML
 function createProjectCard(project, delay) {
-  const MOBILE_TAGS = 4;
-  const extraTags = project.technologies.length - MOBILE_TAGS;
-  const technologiesHTML =
-    project.technologies
-      .map(
-        (tech, i) =>
-          `<span class="${i >= MOBILE_TAGS ? "hidden sm:inline-block" : ""} px-2.5 py-1 sm:px-3 bg-primary/20 text-primary text-xs sm:text-sm !rounded-button">${tech}</span>`,
-      )
-      .join("") +
-    (extraTags > 0
-      ? `<span class="sm:hidden px-2.5 py-1 bg-primary/20 text-primary text-xs !rounded-button">+${extraTags}</span>`
-      : "");
+  const technologiesHTML = project.technologies
+    .map(
+      (tech) =>
+        `<span class="px-2.5 py-1 sm:px-3 bg-primary/20 text-primary text-xs sm:text-sm !rounded-button">${tech}</span>`,
+    )
+    .join("");
 
   const appStoreHTML = project.appStoreUrl
     ? `
@@ -338,14 +332,28 @@ function initProjectStack() {
 
     const t = (NAV_HEIGHT - track.getBoundingClientRect().top) / step();
     const entered = cards.map((_, i) => (i === 0 ? 1 : easeOut(clamp((t - (i - 1) - HOLD) / (1 - HOLD)))));
-
-    cards.forEach((card, i) => {
+    const heights = cards.map((card) => card.offsetHeight);
+    const frames = cards.map((_, i) => {
       const covered = Math.min(
         2,
         entered.slice(i + 1).reduce((sum, e) => sum + e, 0),
       );
-      const y = (1 - entered[i]) * window.innerHeight - covered * 8;
-      card.style.transform = `translate3d(0, ${y}px, 0) scale(${1 - covered * 0.05})`;
+      return { covered, y: (1 - entered[i]) * window.innerHeight - covered * 8, scale: 1 - covered * 0.05 };
+    });
+
+    // Cards keep their natural heights, so a taller card behind must not poke out below the ones in front
+    const top = entered.reduce((last, e, i) => (e > 0 ? i : last), 0);
+    let limit = Infinity;
+    for (let i = top; i >= 0; i--) {
+      const { y, scale } = frames[i];
+      const hidden = Math.max(0, heights[i] - (limit - y) / scale);
+      cards[i].style.clipPath = hidden > 0 ? `inset(0 0 ${hidden}px 0 round 8px)` : "";
+      limit = Math.min(limit, y + heights[i] * scale);
+    }
+
+    cards.forEach((card, i) => {
+      const { covered, y, scale } = frames[i];
+      card.style.transform = `translate3d(0, ${y}px, 0) scale(${scale})`;
       card.style.opacity = covered > 1 ? 2 - covered : 1;
       card.style.pointerEvents = covered > 0.5 ? "none" : "auto";
     });

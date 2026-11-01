@@ -261,6 +261,7 @@
    /* Scroll position drives these cards directly, so AOS's fade and transition must not interfere */
    .project-stack .project-card {
      grid-area: 1 / 1;
+     align-self: start;
      transform-origin: top center;
      transition: none !important;
      will-change: transform, opacity;
